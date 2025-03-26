@@ -2,6 +2,7 @@ import numpy as np
 from sklearn.preprocessing import StandardScaler
 
 def get_ideal_vector(risk_profile: str) -> np.ndarray:
+    # based on benchmark data
     ideal = np.array([
         1.40390454e+02, 1.33685147e-02, 4.58329545e+06, 2.52951460e+01, 
         1.95996390e+01, 1.81372682e+11, 1.86500000e+00, 1.08250000e+00, 
