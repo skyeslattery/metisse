@@ -48,9 +48,10 @@ class InputPanel:
         search_icon = tk.Label(
             search_frame,
             text="🔍",
-            bg="#f5f5f7"
+            bg="#f5f5f7",
         )
         search_icon.pack(side="right", padx=(8, 10))
+        search_icon.bind("<Button-1>", lambda e: self.add_ticker())
         
         style.configure("Search.TEntry", fieldbackground="#f0f0f2", borderwidth=0)
         
@@ -188,7 +189,6 @@ class InputPanel:
                 text="×",
                 font=("TkDefaultFont", 11, "bold"),
                 fg="#888888",
-                cursor="hand2",
                 bg="#f0f0f2"
             )
             remove_btn.pack(side="left", padx=(0, 2))

@@ -11,6 +11,7 @@ def run_app():
     
     # minsize 80% original
     root.minsize(720, 360)
+    root.maxsize(1170, 470)
     
     AppController(root)
 
