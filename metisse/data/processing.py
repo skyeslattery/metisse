@@ -46,7 +46,7 @@ def compute_portfolio_vector(feature_vectors: list) -> np.ndarray:
     return np.mean(feature_vectors, axis=0)
 
 if __name__ == '__main__':
-    from stocks_ml.data.api import get_ticker_data
+    from metisse.data.api import get_ticker_data
     try:
         ticker_obj, df = get_ticker_data("MSFT", data_type="historical")
         feats = compute_features_from_data(ticker_obj, df)

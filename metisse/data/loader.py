@@ -1,6 +1,6 @@
-from stocks_ml.config.candidates import CANDIDATE_TICKERS
-from stocks_ml.data.api import get_ticker_data
-from stocks_ml.data.db import get_stock_data, insert_stock_data
+from metisse.config.candidates import CANDIDATE_TICKERS
+from metisse.data.api import get_ticker_data
+from metisse.data.db import get_stock_data, insert_stock_data
 
 def load_candidates():
     for ticker in CANDIDATE_TICKERS:

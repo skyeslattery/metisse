@@ -43,12 +43,12 @@ class InputPanel:
         self.entry.pack(side="left", fill="x", expand=True, ipady=5, padx=5)
         self.entry.bind("<Return>", lambda e: self.add_ticker())
 
-        self.entry.bind("<FocusIn>", self.on_entry_focus_in)
-        self.entry.bind("<FocusOut>", self.on_entry_focus_out)
+        search_container.pack(side="left", fill="x", expand=True)
 
         search_icon = tk.Label(
-            search_container, 
+            search_frame,
             text="🔍",
+            bg="#f5f5f7"
         )
         search_icon.pack(side="right", padx=(8, 10))
         
@@ -118,14 +118,6 @@ class InputPanel:
         )
         low_risk.pack(side="top", anchor="w")
 
-    def on_entry_focus_in(self, event):
-        if self.entry_var.get() == "Enter ticker symbol and press Enter":
-            self.entry_var.set("")
-
-    def on_entry_focus_out(self, event):
-        if not self.entry_var.get():
-            self.entry_var.set("Enter ticker symbol and press Enter")
-
     def on_frame_configure(self, event):
         self.canvas.configure(scrollregion=self.canvas.bbox("all"))
         
@@ -138,10 +130,7 @@ class InputPanel:
         width = event.width
         self.canvas.itemconfig(self.canvas_window, width=width)
     
-    def add_ticker(self):
-        if self.entry_var.get() == "enter ticker symbol and press enter":
-            return
-            
+    def add_ticker(self):            
         ticker = self.entry_var.get().strip().upper()
         if ticker and ticker not in self.selected_tickers:
             self.selected_tickers.append(ticker)

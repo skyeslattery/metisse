@@ -1,6 +1,6 @@
 import sqlite3
 import json
-from stocks_ml.config.settings import DB_PATH
+from metisse.config.settings import DB_PATH
 
 def create_connection(db_file: str = DB_PATH) -> sqlite3.Connection:
     return sqlite3.connect(db_file)

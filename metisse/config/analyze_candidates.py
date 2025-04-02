@@ -1,10 +1,10 @@
 import pandas as pd
 import numpy as np
 import yfinance as yf
-from stocks_ml.config.candidates import CANDIDATE_TICKERS
-from stocks_ml.data.db import get_stock_data
-from stocks_ml.data.processing import compute_features_from_data, feature_vector_from_features
-from stocks_ml.data.loader import load_candidates
+from metisse.config.candidates import CANDIDATE_TICKERS
+from metisse.data.db import get_stock_data
+from metisse.data.processing import compute_features_from_data, feature_vector_from_features
+from metisse.data.loader import load_candidates
 # helper file to find the ideal feature vector
 
 

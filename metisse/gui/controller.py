@@ -3,14 +3,14 @@ from tkinter import ttk
 import threading
 from tkinter import font as tkfont
 
-from stocks_ml.data.api import get_ticker_data
-from stocks_ml.data.models import recommend_stocks_by_gap
-from stocks_ml.data.processing import (
+from metisse.data.api import get_ticker_data
+from metisse.data.models import recommend_stocks_by_gap
+from metisse.data.processing import (
     compute_features_from_data,
     feature_vector_from_features,
     compute_portfolio_vector
 )
-from stocks_ml.config.candidates import CANDIDATE_TICKERS
+from metisse.config.candidates import CANDIDATE_TICKERS
 from .input_panel import InputPanel
 from .results_panel import ResultsPanel
 from PIL import Image, ImageTk
@@ -39,16 +39,13 @@ class AppController:
         header_frame = ttk.Frame(root, padding=5)
         header_frame.pack(fill="x", pady=(5, 0))
         
-        app_name = ttk.Label(header_frame, text="métissé", font=("TkDefaultFont", 18, "bold"))
-        app_name.pack(side="left", padx=15)
-        
-        img = Image.open("stocks_ml/assets/metisse_logo.png")
-        img = img.resize((50, 15), Image.Resampling.LANCZOS)
+        img = Image.open("metisse/assets/metisse_logo.png")
+        img = img.resize((70, 20), Image.Resampling.LANCZOS)
 
-        # logo_img = ImageTk.PhotoImage(img)
-        # logo_label = ttk.Label(header_frame, image=logo_img)
-        # logo_label.image = logo_img
-        # logo_label.pack(side="left", padx=(0, 10))
+        logo_img = ImageTk.PhotoImage(img)
+        logo_label = ttk.Label(header_frame, image=logo_img)
+        logo_label.image = logo_img
+        logo_label.pack(side="left", padx=(20, 10))
         
         main_container = ttk.Frame(root, padding=0)
         main_container.pack(fill="both", expand=True, padx=20, pady=5)
